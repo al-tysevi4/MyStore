@@ -1,7 +1,10 @@
 package mystore;
 
+import com.google.gson.Gson;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import java.io.FileWriter;
 
 import static mystore.TestBase.wd;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -29,7 +32,8 @@ public class HeaderOfTheTestedSite extends PageBase {
         wd.findElement(By.linkText("Sign out")).click();
     }
 
-    protected void submit() {
+    protected HeaderOfTheTestedSite submit() {
         wd.findElement(By.id("SubmitLogin")).click();
+        return this;
     }
 }

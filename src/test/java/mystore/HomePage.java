@@ -13,8 +13,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class HomePage {
     //private By dresseButton = By.xpath("//div[text()='Categories']/following-sibling::ul/li/a[text()='Dresses']");
 
-    //@FindBy(xpath = "//div[text()='Categories']/following-sibling::ul/li/a[text()='Dresses']")
-    //private WebElement dressButton;
+//    @FindBy(xpath = "//div[text()='Categories']/following-sibling::ul/li/a[text()='Dresses']")
+//    private WebElement dressButton;
     private By dressButton = By.xpath("//div[text()='Categories']/following-sibling::ul/li/a[text()='Dresses']");
 
     private By homePageLogoButton = By.xpath("//*[@title='Home']");

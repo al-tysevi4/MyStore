@@ -11,23 +11,27 @@ public class AccountPage extends PageBase {
     private By password = By.id("passwd");
     private By submitLogin = By.id("SubmitLogin");
     private By signOut = By.linkText("Sign out");
+    private By TheURL = By.id("http://automationpractice.com/index.php");
 
 
-    protected void fillPasswordForm(String password) {
+    protected AccountPage fillPasswordForm(String password) {
         wd.findElement(By.id("passwd")).click();
         wd.findElement(By.id("passwd")).clear();
         wd.findElement(By.id("passwd")).sendKeys(password);
+        return this;
     }
 
-    protected void fillEmailForm(String email) {
+    protected AccountPage fillEmailForm(String email) {
         wd.findElement(By.id("email")).click();
         wd.findElement(By.id("email")).clear();
         wd.findElement(By.id("email")).sendKeys(email);
+        return this;
     }
 
-    protected void openAccountPage() {
+    protected AccountPage openAccountPage() {
         wd.get("http://automationpractice.com/index.php");
         wd.findElement(By.linkText("Sign in")).click();
+        return this;
     }
 
     protected void checkPasswordFormFilledWithValue(String password) {
@@ -35,9 +39,10 @@ public class AccountPage extends PageBase {
         assertEquals(password, emailElementText, "Отображается некорректный пароль");
     }
 
-    protected void checkEmailFormFilledWithValue(String email) {
+    protected AccountPage checkEmailFormFilledWithValue(String email) {
         String emailElementText = wd.findElement(By.id("email")).getAttribute("value");
         assertEquals(email, emailElementText, "Отображается  некорректный email");
+        return this;
     }
 
 }
